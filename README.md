@@ -1,4 +1,4 @@
-# Authorized Reverse Engineering Research Template
+# Vibe Reverse Engineering Template
 
 This repository is a **starter template** for authorized security research and
 reverse engineering. It does not contain a qualified target, product artifact,
