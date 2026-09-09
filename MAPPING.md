@@ -47,6 +47,8 @@ note under `analysis/ID-<component-name>.md`. Use a stable, lowercase,
 kebab-case identifier for the logical component rather than for a particular
 file or version.
 
+Copy `analysis/COMPONENT-TEMPLATE.md` when starting a new component note.
+
 Keep the note minimal:
 
 ```markdown

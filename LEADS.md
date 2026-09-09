@@ -20,6 +20,32 @@ function is not sufficient by itself.
 | --- | --- | --- | --- | --- | --- | --- |
 | To create | Idea |  |  |  |  |  |
 
+## Naming
+
+Give every lead a stable identifier using `<AREA>-<NNN>`, where `AREA` is a
+short uppercase name for the relevant surface or subsystem and `NNN` is a
+three-digit sequence. Examples include `AUTH-001`, `IPC-002`, and `UPDATE-003`.
+
+Do not include status, severity, version, or a product build in the identifier.
+Those properties may change while the identifier must remain stable.
+
+Use `<LEAD-ID>-<short-kebab-case-title>` as the common filename stem:
+
+```text
+reports/potential-vulnerabilities/AUTH-001-session-ownership-check.md
+reports/runtime-validations/AUTH-001-session-ownership-check.md
+reports/AUTH-001-session-ownership-check-final.md
+```
+
+When the state changes, update this registry and move the canonical record when
+appropriate; do not rename it to reflect the new state. A dismissed lead keeps
+the same identifier and filename so its analysis remains easy to find without
+creating a duplicate investigation.
+
+Name supporting evidence `<LEAD-ID>-E<NN>-<short-description>.<extension>`, for
+example `AUTH-001-E01-runtime-result.txt`, and register it in
+`reports/evidence/README.md`.
+
 ## Discipline
 
 Create a file under `reports/potential-vulnerabilities/` only when the
