@@ -1,51 +1,79 @@
-# Initial Mapping
+# Project Mapping
 
 ## Objective
 
-Build a verifiable view of the components under review, their inputs,
-privileges, and trust boundaries before attempting any vulnerability
-validation.
+Describe how the product is organized and how its major components interact.
+The mapping is an architectural model, not a file-by-file inventory. It should
+make trust boundaries, data flows, privileged consumers, and exposed interfaces
+easy to understand before detailed vulnerability analysis begins.
 
-## Quick start
+## Product baseline
 
-1. List the authorized artifacts: native applications, managed applications,
-   servers, launchers, web properties, APIs, plugins, or update packages.
-2. For each artifact, record its provenance, version, date, size, format,
-   architecture, and SHA-256.
-3. Inventory entry points: files, archives, manifests, IPC, sockets, HTTP,
-   WebSocket, QUIC, RPC, serialization, plugins, and updates.
-4. Identify identities and privileges: local user, application account,
-   untrusted peer, official service, privileged process, and backend.
-5. Trace flows from a controllable input through parsing, authentication or
-   authorization guards, consumers, and storage.
-6. Label every assertion as an observation, static analysis, inference, or
-   runtime result.
-7. Link every lead to the mapping entry that supports its reachability.
+Record the overall application version used for the research. Add separate
+versions only when independently deployed services or clients clearly differ.
 
-## Inventory
+| Product | Overall version / build | Release or acquisition date | Platforms / environments | Source |
+| --- | --- | --- | --- | --- |
+| To be completed |  |  |  |  |
 
-| Component | Version / build | Provenance | SHA-256 | Role | Analysis status |
-| --- | --- | --- | --- | --- | --- |
-| To be completed |  |  |  |  | Not started |
+## Mapping workflow
 
-## Surfaces and boundaries
+1. Identify the product's top-level structure from documentation, directory
+   layout, package manifests, configuration, and observed runtime behavior.
+2. Group files into logical components such as client, launcher, local service,
+   backend, updater, plugin system, web application, API, and data store.
+3. Record each component's responsibility, execution context, privilege level,
+   and principal dependencies.
+4. Trace how components communicate through files, IPC, sockets, HTTP,
+   WebSocket, QUIC, RPC, serialization, queues, or shared storage.
+5. Identify which component authenticates the caller and which component makes
+   the final authorization decision.
+6. Mark external input, privilege changes, parser transitions, and movement of
+   sensitive data as trust boundaries.
+7. Label uncertain relationships as inferences and list the observation needed
+   to confirm them.
+8. Link a research lead to the relevant component and interaction entries.
 
-| Surface | Controllable input | Expected guard | Consumer | Sensitive data or privilege | Evidence |
+## Components
+
+| Component | Technology / runtime | Responsibility | Runs where / as whom | Main dependencies | Trust level | Evidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| To be completed |  |  |  |  |  |  |
+
+## Component interactions
+
+| Source | Destination | Interface / protocol | Data or command exchanged | Authentication | Authorization owner | Evidence / status |
+| --- | --- | --- | --- | --- | --- | --- |
+| To be completed |  |  |  |  |  |  |
+
+## Exposed surfaces and trust boundaries
+
+| Surface | Controlling actor | Receiving component | Parser or handler | Boundary crossed | Sensitive capability or data |
 | --- | --- | --- | --- | --- | --- |
 | To be completed |  |  |  |  |  |
 
-## Typical flow
+## Architecture sketch
+
+Keep a compact diagram or text model synchronized with the tables above. For
+example:
 
 ```text
-Low-privileged caller
-  -> authorized entry point
-  -> parsing and normalization
-  -> authentication
-  -> object-level authorization
-  -> privileged consumer
-  -> sensitive effect or data
+Untrusted client
+  -> public interface
+  -> protocol or request handler
+  -> authentication service
+  -> authorization decision
+  -> privileged service
+  -> data store or operating-system capability
 ```
 
-Do not infer that a component is exposed merely because it is present in an
-artifact. Confirm that it is active and reachable in an authorized environment
-before promoting a lead.
+## Evidence discipline
+
+Use the general application version to anchor the map. Do not calculate or
+record a hash for every file. Record a SHA-256 only when a specific binary,
+library, archive, or generated input becomes important to a detailed static
+analysis, runtime validation, or vulnerability report.
+
+Do not infer that a component is exposed merely because it exists in the
+installation tree. Confirm that it is loaded, reachable, or invoked in the
+authorized environment before treating the path as active.
