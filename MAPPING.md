@@ -40,6 +40,36 @@ versions only when independently deployed services or clients clearly differ.
 | --- | --- | --- | --- | --- | --- | --- |
 | To be completed |  |  |  |  |  |  |
 
+## Per-component analysis
+
+When reverse engineering requires more detail, create a lightweight component
+note under `analysis/ID-<component-name>.md`. Use a stable, lowercase,
+kebab-case identifier for the logical component rather than for a particular
+file or version.
+
+Keep the note minimal:
+
+```markdown
+# ID-component-name
+
+**Role:** Short description of the component's responsibility.
+
+## Interactions
+
+| Direction | Component | Function | Arguments | Result / effect | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Incoming or outgoing | `ID-peer` | `function()` | Relevant arguments | Return value, state change, or action | Useful behavior |
+
+## Notes
+
+Free-form reverse-engineering notes.
+```
+
+Add one row for each relevant function involved in an intercomponent
+interaction. Record what its arguments represent, what the function does, and
+what it returns or changes. It is not necessary to document unrelated internal
+functions.
+
 ## Component interactions
 
 | Source | Destination | Interface / protocol | Data or command exchanged | Authentication | Authorization owner | Evidence / status |
