@@ -1,0 +1,23 @@
+# Local secrets and settings
+creds.json
+.env
+.env.*
+secrets/
+*.key
+*.pem
+
+# Local analysis databases and caches
+*.i64
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+__pycache__/
+*.pyc
+
+# Captures and potentially sensitive responses
+*.pcap
+*.pcapng
+cookies.txt
+response-body.*
