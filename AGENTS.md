@@ -23,8 +23,9 @@ Read `WORKERS.md` only when delegating work to sub-agents.
 ## Minimal workflow
 
 1. Identify the exact target, build, environment, and research objective.
-2. Acquire the artifact from a legitimate source and record its version,
-   provenance, size, and SHA-256.
+2. Acquire the artifact from a legitimate source and record enough identity
+   information to distinguish it from other builds. Preserve stronger
+   provenance only when it affects a comparison or conclusion.
 3. Search the map, leads, and targeted journal entries for the same boundary,
    identifiers, and path.
 4. State the novelty condition: a new caller, consumer, version delta, state
@@ -40,8 +41,8 @@ Read `WORKERS.md` only when delegating work to sub-agents.
    hypothesis.
 9. Use runtime analysis when it materially resolves the current question, and
    record its environment, inputs, observations, and cleanup.
-10. Retain only necessary evidence, clean up temporary objects, and update the
-    journal, map, and leads.
+10. Retain useful evidence, clean up temporary objects, and update only the
+    project records affected by the result.
 
 ## High-impact reasoning
 
@@ -78,7 +79,7 @@ interruption before creating replacements.
 
 ## Security lead deliverable
 
-When the research concerns a potential vulnerability, its lead record must
-include the asset and version, SHA-256, trust boundary, complete path,
-prerequisites, expected impact, minimal test, result, limits, cleanup, links to
-evidence, and the exact condition for reopening a parked or dismissed path.
+When the research concerns a potential vulnerability, its lead record should
+capture the affected asset, boundary, complete path, prerequisites, expected
+impact, test result, limits, and useful evidence. Record exact artifact
+identity and reopening conditions when they matter to the finding.

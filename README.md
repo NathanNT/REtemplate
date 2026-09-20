@@ -9,8 +9,8 @@ At the start of a project:
 1. Define the exact target, authorization, environment, and operating limits.
 2. Configure [`ACCESS.md`](ACCESS.md) locally without recording secrets in it.
 3. Begin the component and trust-boundary map in [`MAPPING.md`](MAPPING.md).
-4. Record every result in [`JOURNAL.md`](JOURNAL.md) and every hypothesis in
-   [`LEADS.md`](LEADS.md).
+4. Record durable results in [`JOURNAL.md`](JOURNAL.md) and hypotheses worth
+   revisiting in [`LEADS.md`](LEADS.md).
 
 If the project is governed by a bug bounty or vulnerability disclosure
 program, also synchronize [`CONTRACT.md`](CONTRACT.md) with the live policy and

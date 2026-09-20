@@ -21,7 +21,7 @@ bounded census or differential, or produce stronger evidence.
 
 Prefer a maintained existing tool when it solves the need well. Add a small
 project helper under `tools/` when target-specific orchestration, normalization,
-hash gating, evidence export, or another reproducible operation is the useful
+evidence export, or another reproducible operation is the useful
 part. Keep the implementation proportional to the research benefit; the
 template does not require a new framework or integration layer.
 
@@ -31,8 +31,8 @@ Record a useful addition in this file so another agent can reuse it:
 | --- | --- | --- | --- | --- |
 | To be added when useful |  |  |  |  |
 
-For downloaded or installed tools, record the authoritative source and pinned
-version or artifact identity when practical. Keep credentials and private
+For downloaded or installed tools, record the source and version when useful.
+Keep credentials and private
 configuration outside the repository. Update or remove a tool entry when it
 is superseded so this file remains an accurate operational inventory.
 
@@ -59,21 +59,22 @@ Never disable host key verification globally.
 
 ## IDA
 
-IDA must run in a dedicated analysis VM with no access to production secrets.
-Import only a copy of an artifact whose SHA-256 has been calculated locally.
-Use the IDA MCP server's supported import and database-opening operations when
-they are available; the template does not assume a separate upload helper.
+Run IDA locally, in an isolated VM, or through a remote service according to
+the target and execution risk. Use the IDA MCP server's supported import and
+database-opening operations when available; the template does not assume a
+separate upload helper.
 
 Generic procedure:
 
-1. Calculate and record the local SHA-256.
-2. Import the artifact through the configured MCP workflow.
-3. Use a stable explicit name that includes the component and version so an
+1. Identify the artifact and import it through the configured MCP workflow.
+2. Use a stable explicit name that includes the component and version so an
    existing database can be reused.
-4. Open the file in IDA without executing it.
-5. Recalculate or verify the SHA-256 in the VM.
-6. Draw conclusions only when the hashes match.
-7. Export only the functions, references, and pseudocode needed for the work.
+3. Open the file in IDA without executing it.
+4. Export only the functions, references, and pseudocode needed for the work.
+
+Record a digest when several builds could be confused, a transfer may have
+altered the file, or a conclusion or deliverable depends on exact identity.
+Reuse an identity already established for an unchanged artifact.
 
 A first open may remain busy while IDA creates the database, performs automatic
 analysis, initializes the decompiler, or builds search caches. If the MCP call
