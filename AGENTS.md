@@ -5,18 +5,22 @@
 Read these files completely, in order:
 
 1. `README.md`
-2. `CONTRACT.md`
-3. `MAPPING.md`
-4. `LEADS.md`
+2. `MAPPING.md`
+3. `LEADS.md`
 
 Locate the latest `Handoff` entry in `JOURNAL.md`, then read only that bounded
 entry and the records it references. Read `ACCESS.md` before SSH, IDA, staging,
-or other environment-specific access. Read `DOCS.md` only while creating or
-revising a report. Recheck `CONTRACT.md` before every network or runtime phase.
+or other environment-specific access.
+
+When the project is governed by a bug bounty or vulnerability disclosure
+program, read `CONTRACT.md` before research and recheck it before each network
+or runtime phase. Read `DOCS.md` only while creating or revising a submission
+for such a program. Neither file is part of the default reverse-engineering
+resume path.
 
 ## Minimal workflow
 
-1. Identify the exact asset and confirm that it is currently in scope.
+1. Identify the exact target, build, environment, and research objective.
 2. Acquire the artifact from a legitimate source and record its version,
    provenance, size, and SHA-256.
 3. Search the map, leads, and targeted journal entries for the same boundary,
@@ -24,15 +28,16 @@ revising a report. Recheck `CONTRACT.md` before every network or runtime phase.
 4. State the novelty condition: a new caller, consumer, version delta, state
    transition, guard bypass, representation mismatch, or composition. Reuse
    the existing conclusion when no novelty condition exists.
-5. Map formats, processes, protocols, inputs, and trust boundaries before
-   looking for an exploitable primitive.
+5. Map formats, processes, protocols, inputs, and relevant boundaries before
+   deep analysis.
 6. Explicitly distinguish observations, static analysis, inferences, and
    runtime validation.
-7. Create a lead only when a caller, input, guard, consumer, and plausible
-   impact can be connected.
-8. Prepare the smallest test that can confirm or disprove the hypothesis.
-9. Perform runtime testing only when it complies with the contract, scope, and
-   the operator's explicit limits.
+7. For a security lead, require a connected caller, input, guard, consumer,
+   boundary, and plausible impact.
+8. Prepare the smallest experiment that can confirm or disprove the current
+   hypothesis.
+9. Use runtime analysis when it materially resolves the current question, and
+   record its environment, inputs, observations, and cleanup.
 10. Retain only necessary evidence, clean up temporary objects, and update the
     journal, map, and leads.
 
@@ -68,26 +73,9 @@ guards before changing the map, a lead verdict, or a report. Continue separate
 useful work while workers run, and inspect existing job files after an
 interruption before creating replacements.
 
-## Standing rules
+## Security lead deliverable
 
-- Use only your own accounts and test data.
-- Never access another person's account or data.
-- Do not perform denial-of-service testing, brute force, credential stuffing,
-  or account enumeration.
-- Stop before any post-exploitation, data modification, or destruction and
-  prepare the report.
-- Never execute an extracted binary. Any legitimate execution must use a
-  controlled, isolated, and explicitly authorized installation.
-- Never expose a secret, cookie, token, key, sensitive response body, or player
-  data in a command, evidence file, or report.
-- Verify the SHA-256 of every artifact loaded into IDA before drawing a
-  conclusion.
-- Never describe a hypothesis as a vulnerability without runtime evidence when
-  that evidence is required to support the claimed impact.
-
-## Lead deliverable
-
-A lead record must include the asset and version, SHA-256, trust boundary,
-complete path, prerequisites, expected impact, minimal test, result, limits,
-cleanup, links to evidence, and the exact condition for reopening a parked or
-dismissed path.
+When the research concerns a potential vulnerability, its lead record must
+include the asset and version, SHA-256, trust boundary, complete path,
+prerequisites, expected impact, minimal test, result, limits, cleanup, links to
+evidence, and the exact condition for reopening a parked or dismissed path.

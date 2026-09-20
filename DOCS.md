@@ -1,8 +1,9 @@
 # Writing vulnerability reports
 
-This file defines how final vulnerability reports for this project should be
-written. The intended reader is a triager or product security engineer who
-does not know the laboratory or the investigation history.
+This is an optional bug bounty and vulnerability disclosure program module.
+It is not part of the default reverse-engineering workflow. Use it when a
+validated result is being prepared for a triager or product security engineer
+who does not know the laboratory or the investigation history.
 
 ## General standard
 

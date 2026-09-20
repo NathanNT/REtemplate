@@ -1,5 +1,10 @@
 # Research Contract
 
+This is an optional bug bounty and vulnerability disclosure program module.
+It is not part of the default reverse-engineering workflow. Use it only when
+the target is governed by an external program whose live scope and testing
+rules constrain the research.
+
 **Status:** Not synchronized
 
 **Official policy and scope:** `<FETCH_FROM_PROGRAM>`
@@ -8,9 +13,9 @@
 
 **Last synchronized:** `<YYYY-MM-DD>`
 
-This file must be populated from the live bug bounty or vulnerability
-disclosure program before testing begins. The live policy always takes
-precedence over this working copy.
+For program-governed testing, populate this file from the live bug bounty or
+vulnerability disclosure policy before testing begins. The live policy always
+takes precedence over this working copy.
 
 ## How to initialize this file
 

@@ -14,7 +14,7 @@ result, limitation, and next step. Use these labels:
 
 | Date | Type | Asset / version | Action and result | Limits / next step |
 | --- | --- | --- | --- | --- |
-| `<YYYY-MM-DD>` | Initialization | Research template | Created the documentation workflow; no testing performed | Synchronize `CONTRACT.md`, then begin mapping |
+| `<YYYY-MM-DD>` | Initialization | Research template | Created the documentation workflow; no testing performed | Record authorization and target, then begin mapping |
 
 ## Session closure rule
 
