@@ -29,5 +29,9 @@ Before any network or dynamic action:
 | `reports/` | Lead records, minimal evidence, and final reports |
 | `tools/` | Bounded, reproducible scripts with no embedded secrets |
 
+Resume by reading the small canonical indexes and the latest journal handoff;
+load access procedures, detailed analysis, and reporting guidance only when
+the active task needs them.
+
 This template grants no authorization by itself. The current official policy
 and the operator's explicit instructions always take precedence.

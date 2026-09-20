@@ -56,3 +56,7 @@ validation.
 Never promote a hypothesis because it appears severe. The verdict must state
 what was observed, what static analysis proves, what remains inferred, and what
 runtime testing confirms.
+
+A parked or dismissed lead must state the exact new caller, consumer, version
+delta, state transition, guard bypass, representation mismatch, or composition
+that would justify reopening it.

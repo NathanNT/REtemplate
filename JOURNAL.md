@@ -21,3 +21,20 @@ result, limitation, and next step. Use these labels:
 Before ending a session, record the state of processes, files, and temporary
 objects, confirm cleanup, and update `LEADS.md` only for status changes that
 the evidence genuinely supports.
+
+End meaningful work with a compact handoff entry:
+
+```markdown
+## <YYYY-MM-DD HH:MM timezone> — Handoff
+
+**Target:** <asset and build>
+**Active lead:** <identifier or none>
+**Confirmed:** <latest reliable result>
+**Open question:** <single decisive question>
+**Next:** <smallest useful action>
+**Do not repeat:** <closed paths and reopening conditions>
+**Evidence:** <project-relative paths>
+```
+
+On resumption, find the latest `Handoff` heading and read only that bounded
+section plus its referenced records. Do not load the complete journal.
