@@ -26,6 +26,7 @@ optional modules and are not part of the default reverse-engineering workflow.
 | `AGENTS.md` | Minimal research and validation workflow |
 | `MAPPING.md` | Inventory of components, flows, and trust boundaries |
 | `DOCS.md` | Optional bug-bounty/VDP report-writing guidance |
+| `WORKERS.md` | Optional sub-agent delegation and review workflow |
 | `JOURNAL.md` | Factual research timeline |
 | `LEADS.md` | Registry of hypotheses and their status |
 | `analysis/` | Static notes and selected disassembly output |

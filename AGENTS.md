@@ -18,6 +18,8 @@ or runtime phase. Read `DOCS.md` only while creating or revising a submission
 for such a program. Neither file is part of the default reverse-engineering
 resume path.
 
+Read `WORKERS.md` only when delegating work to sub-agents.
+
 ## Minimal workflow
 
 1. Identify the exact target, build, environment, and research objective.
@@ -67,9 +69,10 @@ scope, novelty condition, known closures, expected output, stopping condition,
 and budget. Long work must checkpoint to disk, and each usable result must be
 persisted before it is consumed; chat transport alone is not durable evidence.
 
-A worker result is a lead. The orchestrating agent independently verifies the
-decisive bytes, instructions, types, references, hashes, reachability, and
-guards before changing the map, a lead verdict, or a report. Continue separate
+A worker result is a lead. The orchestrating agent reviews its logic, checks
+that the cited evidence supports the path, and spot-checks decisive claims.
+Repeat the underlying analysis only when the result is inconsistent, weakly
+sourced, or about to support a high-impact final conclusion. Continue separate
 useful work while workers run, and inspect existing job files after an
 interruption before creating replacements.
 
