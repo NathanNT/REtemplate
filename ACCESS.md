@@ -60,23 +60,23 @@ Never disable host key verification globally.
 ## IDA
 
 IDA must run in a dedicated analysis VM with no access to production secrets.
-Transfer only a copy of an artifact whose SHA-256 has been calculated locally.
+Import only a copy of an artifact whose SHA-256 has been calculated locally.
+Use the IDA MCP server's supported import and database-opening operations when
+they are available; the template does not assume a separate upload helper.
 
 Generic procedure:
 
 1. Calculate and record the local SHA-256.
-2. Transfer the artifact to the VM through the approved automated channel.
-3. Use an explicit remote name that includes the component and version.
+2. Import the artifact through the configured MCP workflow.
+3. Use a stable explicit name that includes the component and version so an
+   existing database can be reused.
 4. Open the file in IDA without executing it.
 5. Recalculate or verify the SHA-256 in the VM.
 6. Draw conclusions only when the hashes match.
 7. Export only the functions, references, and pseudocode needed for the work.
 
-If a compatible helper is added under `tools/`, its expected form is:
-
-```text
-.\tools\upload-to-ida-vm.ps1 -Path <LOCAL_FILE> -RemoteName <EXPLICIT_NAME> -OpenInGui
-```
-
-The VM address, credentials, and keys belong in the helper's local
-configuration, never in this document.
+A first open may remain busy while IDA creates the database, performs automatic
+analysis, initializes the decompiler, or builds search caches. If the MCP call
+times out, inspect the existing sessions and analysis state before retrying;
+do not start a duplicate import while the original worker may still be active.
+Build optional caches only when the current question needs them.
