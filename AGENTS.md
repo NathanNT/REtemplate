@@ -10,7 +10,7 @@ Read these files completely, in order:
 
 Locate the latest `Handoff` entry in `JOURNAL.md`, then read only that bounded
 entry and the records it references. Read `ACCESS.md` before SSH, IDA, staging,
-or other environment-specific access.
+tool installation or configuration, or other environment-specific access.
 
 When the project is governed by a bug bounty or vulnerability disclosure
 program, read `CONTRACT.md` before research and recheck it before each network

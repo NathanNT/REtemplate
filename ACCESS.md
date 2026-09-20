@@ -1,13 +1,40 @@
 # Research Access
 
-This file describes procedures only. It must not contain machine addresses,
-real account names, passwords, or private keys.
+This file describes available tools and environment-specific access
+procedures. It must not contain real account names, passwords, private keys,
+or other secrets.
 
 ## Secrets
 
 Keep real connection settings in a secret manager or in a local file excluded
 from version control. Load them into memory only when needed. Never display
 them, copy them into a visible command, log them, or include them in evidence.
+
+## Adding tools
+
+The tools documented here are a starting point, not a closed list. Agents are
+encouraged to propose, install, configure, or create a tool when it adds clear
+value to the research workflow. Useful additions include tools that unlock a
+missing analysis capability, automate a repeated operation, improve
+reproducibility, preserve artifact identity, reduce manual error, accelerate a
+bounded census or differential, or produce stronger evidence.
+
+Prefer a maintained existing tool when it solves the need well. Add a small
+project helper under `tools/` when target-specific orchestration, normalization,
+hash gating, evidence export, or another reproducible operation is the useful
+part. Keep the implementation proportional to the research benefit; the
+template does not require a new framework or integration layer.
+
+Record a useful addition in this file so another agent can reuse it:
+
+| Tool | Version / source | Location or command | Purpose | Usage notes |
+| --- | --- | --- | --- | --- |
+| To be added when useful |  |  |  |  |
+
+For downloaded or installed tools, record the authoritative source and pinned
+version or artifact identity when practical. Keep credentials and private
+configuration outside the repository. Update or remove a tool entry when it
+is superseded so this file remains an accurate operational inventory.
 
 ## SSH
 
